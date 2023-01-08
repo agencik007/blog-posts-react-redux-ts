@@ -1,3 +1,6 @@
+# Info
+Hello, it is a little task where i wanted to improve my typescript skills. Based on [Dave Gray React, Redux Course](https://www.youtube.com/watch?v=NqzdVN2tyvQ). I changed only version from JavaScript to TypeScript and files oraganization. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
