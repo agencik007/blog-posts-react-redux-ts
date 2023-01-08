@@ -23,10 +23,13 @@ const usersSlice = createSlice({
     extraReducers(builder) {
         builder.addCase(fetchUsers.fulfilled, (state, action) => {
             return action.payload;
-        })
+        });
     }
 });
 
 export const selectAllUsers = (state: RootState) => state.users;
+
+export const selectUserById = (state: RootState, userId: number) =>
+    state.users.find((user) => user.id === userId);
 
 export default usersSlice.reducer;
