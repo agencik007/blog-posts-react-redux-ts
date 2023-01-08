@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 import { sub } from 'date-fns';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 
 const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
 
