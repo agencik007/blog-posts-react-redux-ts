@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 import { sub } from 'date-fns';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -67,7 +67,7 @@ export const deletePost = createAsyncThunk(
             const response = await axios.delete(`${POSTS_URL}/${id}`);
             if (response?.status === 200) return initialPost;
             return `${response?.status}: ${response?.statusText}`;
-        } catch (err: any) {
+        } catch (err) {
             return err.message;
         }
     }

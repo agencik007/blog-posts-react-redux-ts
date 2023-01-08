@@ -22,20 +22,21 @@ const AddPostForm = () => {
     const onAuthorChanged = (e: SyntheticEvent) =>
         setUserId(+(e.target as HTMLTextAreaElement).value);
 
-    const canSave = [title, content, userId].every(Boolean) && addReqStatus === 'idle';
+    const canSave =
+        [title, content, userId].every(Boolean) && addReqStatus === 'idle';
 
     const onSavePostClicked = () => {
         if (canSave) {
             try {
                 setAddReqStatus('pending');
-                dispatch(addNewPost({title, body: content, userId})).unwrap();
-    
+                dispatch(addNewPost({ title, body: content, userId })).unwrap();
+
                 setTitle('');
                 setContent('');
                 setUserId(0);
                 navigate('/');
             } catch (error) {
-                console.error('Failed to save the post', error)
+                console.error('Failed to save the post', error);
             } finally {
                 setAddReqStatus('idle');
             }
